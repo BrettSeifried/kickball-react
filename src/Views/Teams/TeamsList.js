@@ -11,7 +11,7 @@ export default function TeamsList() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchTeams();
-      // console.log(data);
+      console.log(data);
       setTeams(data);
     };
     fetchData();

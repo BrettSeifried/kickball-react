@@ -6,23 +6,41 @@ import { Link } from 'react-router-dom';
 
 export default function TeamsDetail() {
   const { id } = useParams();
-  const [teamData, setTeamData] = useState(null);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const data = await fetchTeams();
-  //     console.log(data);
-  //     setTeamData(data);
-  //   };
-  //   fetchData();
-  // }, []);
+  const [teamData, setTeamData] = useState([]);
 
   useEffect(() => {
-    getTeamById(id).then(({ data }) => setTeamData(data));
-  }, [id]);
+    const fetchData = async () => {
+      const data = await getTeamById();
+      setTeamData(data);
+      console.log(data);
+    };
+    fetchData();
+  }, []);
 
   return (
-    <h1>test</h1>
-    // <ul className="player-list">{}</ul>;
+    <div>
+      <ul>
+        {teamData.map((team) => (
+          <li key={team.id}>
+            <Team teamData={team} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
+// useEffect(() => {
+//   getTeamById(id).then(({ data }) => setTeamData(data));
+// }, [id]);
+
+//   return (
+//     <>
+//       <ul className="Team-Detail">
+//         {teamData.map((team) => (
+//           <Team key={team.id} team={team} />
+//         ))}
+//       </ul>
+//       ;
+//     </>
+//   );
+// }
