@@ -9,7 +9,6 @@ export default function Team({ team }) {
       <div>
         <p>City: {team.city}</p>
         <p>State: {team.state}</p>
-        <p>Founded: {team.created_at}</p>
       </div>
     </section>
   );

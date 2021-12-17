@@ -4,7 +4,7 @@ import HomeDetail from './Views/Home/HomeDetail';
 import TeamsDetail from './Views/Teams/TeamsDetail';
 import TeamsList from './Views/Teams/TeamsList';
 import PlayerList from './Views/Players/PlayerList';
-import PlayerDetail from './Views/Players/PlayerDetail';
+import PlayersDetail from './Views/Players/PlayerDetail';
 
 function App() {
   return (
@@ -29,10 +29,10 @@ function App() {
           <Route exact path="/teams">
             <TeamsList />
           </Route>
-          <Route path="/players:id">
-            <PlayerDetail />
+          <Route path="/players/:id">
+            <PlayersDetail />
           </Route>
-          <Route path="/players">
+          <Route exact path="/players">
             <PlayerList />
           </Route>
         </Switch>
