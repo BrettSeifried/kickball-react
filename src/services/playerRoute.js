@@ -12,5 +12,5 @@ export async function fetchPlayers() {
 }
 
 export async function getPlayerById(id) {
-  return client.from('players').select(`*, player (*)`).match({ id: id }).single();
+  return client.from('players').select(`*, teams (*)`).match({ id: id }).single();
 }
