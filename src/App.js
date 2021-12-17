@@ -4,6 +4,7 @@ import HomeDetail from './Views/Home/HomeDetail';
 import TeamsDetail from './Views/Teams/TeamsDetail';
 import TeamsList from './Views/Teams/TeamsList';
 import PlayerList from './Views/Players/PlayerList';
+import PlayerDetail from './Views/Players/PlayerDetail';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
             <TeamsList />
           </Route>
           <Route path="/players:id">
+            <PlayerDetail />
+          </Route>
+          <Route path="/players">
             <PlayerList />
           </Route>
         </Switch>

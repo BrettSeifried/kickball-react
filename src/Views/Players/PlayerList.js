@@ -11,8 +11,8 @@ export default function PlayerList() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchPlayers();
-      setPlayers(data);
       console.log(data);
+      setPlayers(data);
     };
     fetchData();
   }, []);
@@ -20,6 +20,7 @@ export default function PlayerList() {
   // if (loading) return <h1>Get your popcorn ready...</h1>;
 
   return (
+    // <p>test</p>
     <ul className="player-list">
       {players.map((player) => (
         <li key="id">
