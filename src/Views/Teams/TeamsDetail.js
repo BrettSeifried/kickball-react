@@ -10,37 +10,39 @@ export default function TeamsDetail() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getTeamById();
-      setTeamData(data);
-      console.log(data);
+      // const data = await getTeamById();
+      const data = await getTeamById(id);
+      setTeamData(data.data);
+      console.log(data.data);
     };
     fetchData();
   }, []);
 
+  useEffect(() => {
+    getTeamById(id).then(({ data }) => setTeamData(data));
+  }, [id]);
+
   return (
     <div>
       <ul>
-        {teamData.map((team) => (
-          <li key={team.id}>
-            <Team teamData={team} />
-          </li>
-        ))}
+        <li key={teamData.id}>
+          <Team team={teamData} />
+        </li>
       </ul>
     </div>
   );
 }
-// useEffect(() => {
-//   getTeamById(id).then(({ data }) => setTeamData(data));
-// }, [id]);
 
 //   return (
 //     <>
-//       <ul className="Team-Detail">
+//       {/* <ul className="Team-Detail">
 //         {teamData.map((team) => (
-//           <Team key={team.id} team={team} />
+//           <p key="id">
+//             <Team teamData={team} />
+//           </p>
 //         ))}
 //       </ul>
-//       ;
+//       ; */}
 //     </>
 //   );
 // }
