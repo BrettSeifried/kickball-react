@@ -10,3 +10,7 @@ export async function fetchTeams() {
   const data = await resp.json();
   return data;
 }
+
+export async function getTeamById(id) {
+  return client.from('teams').select(`*, name (*)`).match({ id: id }).single();
+}
