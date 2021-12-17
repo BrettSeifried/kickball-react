@@ -7,12 +7,14 @@ import { Link } from 'react-router-dom';
 export default function TeamsDetail() {
   const { id } = useParams();
   const [teamData, setTeamData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       // const data = await getTeamById();
       const data = await getTeamById(id);
       setTeamData(data.data);
+      setLoading(false);
       console.log(data.data);
     };
     fetchData();
@@ -21,6 +23,8 @@ export default function TeamsDetail() {
   useEffect(() => {
     getTeamById(id).then(({ data }) => setTeamData(data));
   }, [id]);
+
+  if (loading) return <h1> Get Your popcorn ready</h1>;
 
   return (
     <div>

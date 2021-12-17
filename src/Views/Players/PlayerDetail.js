@@ -7,11 +7,13 @@ import { Link } from 'react-router-dom';
 export default function PlayersDetail() {
   const { id } = useParams();
   const [playerData, setPlayerData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await getPlayerById();
       setPlayerData(data);
+      setLoading(false);
       console.log(data);
     };
     fetchData();
@@ -20,6 +22,8 @@ export default function PlayersDetail() {
   useEffect(() => {
     getPlayerById(id).then(({ data }) => setPlayerData(data));
   }, [id]);
+
+  if (loading) return <h1>Brettford, I Choose you!</h1>;
 
   return (
     <div>
