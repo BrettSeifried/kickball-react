@@ -5,5 +5,5 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 export default function TeamsDetail() {
-  return <p>Test</p>;
+  return <h1>Test</h1>;
 }

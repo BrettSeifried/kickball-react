@@ -21,11 +21,11 @@ function App() {
           <Route exact path="/">
             <HomeDetail />
           </Route>
-          <Route path="/teams">
-            <TeamsList />
-          </Route>
-          <Route path="/teams:id">
+          <Route path="/teams/:id">
             <TeamsDetail />
+          </Route>
+          <Route exact path="/teams">
+            <TeamsList />
           </Route>
         </Switch>
       </BrowserRouter>
