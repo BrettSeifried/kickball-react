@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-// import Player from '../../components/PlayerFunction/Team';
-// import { getPlayers } from '../../services/playerRoute';
 import { Link } from 'react-router-dom';
 import { fetchPlayers } from '../../services/playerRoute';
 
@@ -11,7 +9,7 @@ export default function PlayerList() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchPlayers();
-      console.log(data);
+      // console.log(data);
       setPlayers(data);
     };
     fetchData();

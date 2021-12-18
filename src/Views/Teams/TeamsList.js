@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import Team from '../../components/TeamFunction/Team';
-import { getTeams } from '../../services/teamRoute';
 import { Link } from 'react-router-dom';
 import { fetchTeams } from '../../services/teamRoute';
 
@@ -11,7 +9,7 @@ export default function TeamsList() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchTeams();
-      console.log(data);
+      // console.log(data);
       setTeams(data);
     };
     fetchData();
