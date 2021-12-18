@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import Team from '../../components/TeamFunction/Team';
-import { fetchTeams, getTeamById } from '../../services/teamRoute';
+import { getTeamById } from '../../services/teamRoute';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 export default function TeamsDetail() {
   const { id } = useParams();
@@ -15,10 +14,10 @@ export default function TeamsDetail() {
       const data = await getTeamById(id);
       setTeamData(data.data);
       setLoading(false);
-      console.log(data.data);
+      // console.log(data.data);
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     getTeamById(id).then(({ data }) => setTeamData(data));
