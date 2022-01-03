@@ -10,13 +10,13 @@ function App() {
   return (
     <main className="container">
       <BrowserRouter>
-        <header>
+        <header className="navHeader">
           <NavLink to="/">Home</NavLink>
         </header>
-        <header>
+        <header className="navHeader">
           <NavLink to="/teams">Teams</NavLink>
         </header>
-        <header>
+        <header className="navHeader">
           <NavLink to="/players">Players</NavLink>
         </header>
         <Switch>

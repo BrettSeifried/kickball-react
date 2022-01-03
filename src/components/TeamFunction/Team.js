@@ -15,7 +15,7 @@ export default function Team({ team }) {
         <p>City: {team.city}</p>
         <p>State: {team.state}</p>
       </div>
-      <div>
+      <div className="teamDetail">
         {team.players.map(({ name, position, id }) => (
           <Link key={name} to={`/players/${id}`}>
             <p key="name">

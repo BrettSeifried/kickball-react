@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Team from '../../components/TeamFunction/Team';
 import { getTeamById } from '../../services/teamRoute';
 import { useParams } from 'react-router-dom';
+import './team.css';
 
 export default function TeamsDetail() {
   const { id } = useParams();
